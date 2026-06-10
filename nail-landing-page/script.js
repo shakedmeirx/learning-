@@ -1,3 +1,22 @@
+/* ─── UTM PARAMETER CAPTURE (ads-landing: preserve click attribution) ─── */
+(function captureUTM() {
+  const tracked = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','ttclid','msclkid'];
+  const params = new URLSearchParams(window.location.search);
+  const captured = {};
+  tracked.forEach(k => { const v = params.get(k); if (v) captured[k] = v; });
+  if (Object.keys(captured).length > 0) {
+    try { sessionStorage.setItem('bloom_utm', JSON.stringify(captured)); } catch(e) {}
+  }
+})();
+
+function getUTMAttribution() {
+  try {
+    const d = JSON.parse(sessionStorage.getItem('bloom_utm') || '{}');
+    if (d.utm_source) return `\n[מקור: ${d.utm_source}${d.utm_campaign ? ' / ' + d.utm_campaign : ''}]`;
+  } catch(e) {}
+  return '';
+}
+
 const CONFIG = {
   whatsappNumber: '972500000000', // Change this to your business phone number
   colors: [
@@ -387,6 +406,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     waText += `\nנא לחזור אליי להסדרת התשלום והמשלוח. תודה!`;
+    waText += getUTMAttribution();
 
     // Redirect
     const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(waText)}`;
@@ -490,6 +510,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show result div
     quizResult.classList.add('active');
+  }
+
+  /* ─── SCROLL CTA BAR (desktop — appears after hero) ─── */
+  const scrollCTABar = document.getElementById('scroll-cta-bar');
+  if (scrollCTABar) {
+    const heroEl = document.querySelector('.hero');
+    const heroHeight = heroEl ? heroEl.offsetHeight : 500;
+    window.addEventListener('scroll', () => {
+      const show = window.scrollY > heroHeight * 0.75;
+      scrollCTABar.classList.toggle('visible', show);
+      scrollCTABar.setAttribute('aria-hidden', show ? 'false' : 'true');
+    }, { passive: true });
   }
 
   // Reset quiz

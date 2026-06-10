@@ -1,5 +1,5 @@
 /* ─── DESIGN SYSTEM & TOKENS ─── */
-@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&family=Heebo:wght@700;800&display=swap');
 
 :root {
   color-scheme: light;
@@ -17,7 +17,7 @@
   --shadow-soft: 0 12px 40px rgba(45, 37, 34, 0.03);
   --shadow-hover: 0 20px 48px rgba(45, 37, 34, 0.08);
   --font-hebrew: 'Assistant', sans-serif;
-  --font-serif: 'Playfair Display', serif;
+  --font-numbers: 'Heebo', 'Assistant', sans-serif;
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.2s ease;
   --bg-editorial: #180F0D;
@@ -2356,8 +2356,258 @@ footer {
 @media (max-width: 768px) {
   .hero-deco-leaf,
   .hero-deco-blob {
-    display: none; /* Hide decorative background elements on small mobile screens */
+    display: none;
   }
+}
+
+/* ─── HEEBO NUMBERS ─── */
+.kit-price,
+.hero-badge-num,
+.pci-amount,
+.proof-bar-item strong {
+  font-family: var(--font-numbers);
+}
+
+/* ─── HERO PRICE COMPARISON ─── */
+.hero-price-compare {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 1.5rem 0 1.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.price-compare-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 80px;
+}
+
+.pci-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.pci-amount {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  font-family: var(--font-numbers);
+}
+
+.pci-period {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.price-compare-before .pci-amount {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(157, 114, 102, 0.5);
+}
+
+.price-compare-after .pci-amount {
+  color: var(--accent-rose-dark);
+}
+
+.price-compare-arrow {
+  font-size: 1.4rem;
+  color: var(--accent-rose-dark);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .hero-price-compare {
+    gap: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+  .pci-amount { font-size: 1.35rem; }
+}
+
+/* ─── HERO SECONDARY LINK ─── */
+.hero-secondary-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--accent-rose-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+.hero-secondary-link:hover {
+  color: var(--text-dark);
+  text-decoration: underline;
+}
+
+/* ─── HERO BTN SIZE ─── */
+.btn-hero {
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+}
+
+/* ─── PROOF BAR ─── */
+.proof-bar {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 0;
+}
+
+.proof-bar-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.proof-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  white-space: nowrap;
+}
+
+.proof-bar-icon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.proof-bar-sep {
+  color: var(--border-color);
+  font-size: 1.2rem;
+  font-weight: 300;
+  user-select: none;
+}
+
+@media (max-width: 600px) {
+  .proof-bar-sep { display: none; }
+  .proof-bar-items { gap: 0.4rem 1rem; }
+  .proof-bar-item { font-size: 0.8rem; }
+}
+
+/* ─── KIT URGENCY BADGE ─── */
+.kit-urgency {
+  background: linear-gradient(135deg, var(--accent-rose-dark) 0%, #B86E60 100%);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.35rem 1rem;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* ─── GUARANTEE NOTE NEAR CTA ─── */
+.guarantee-note {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* ─── MODAL GUARANTEE LINE ─── */
+.modal-guarantee {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+/* ─── FORM DISCLAIMER ─── */
+.form-disclaimer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+}
+
+/* ─── WHATSAPP SUBMIT BUTTON ─── */
+.btn-whatsapp-submit {
+  background: #25D366;
+  width: 100%;
+}
+.btn-whatsapp-submit:hover {
+  background: #1EBE58;
+}
+
+/* ─── FOOTER WHATSAPP LINK ─── */
+.footer-wa-link {
+  display: inline-block;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+.footer-wa-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ─── SCROLL CTA BAR (desktop) ─── */
+.scroll-cta-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 900;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(45,37,34,0.08);
+  padding: 0.7rem 0;
+  transform: translateY(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.scroll-cta-bar.visible {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.scroll-cta-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scroll-cta-btn {
+  flex-shrink: 0;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 768px) {
+  .scroll-cta-bar { display: none; }
 }
 
 /* ─── CE INDICATOR IN KIT CARDS ─── */
