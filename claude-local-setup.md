@@ -41,6 +41,13 @@ for skill in market-research last30days icp-research competitors pricing-strateg
 done
 ```
 
+### 3. Install geo-seo-claude skills (AI search optimization)
+
+```bash
+git clone https://github.com/zubair-trabzada/geo-seo-claude /tmp/geo-seo-claude
+cp -r /tmp/geo-seo-claude/skills/* ~/.claude/skills/
+```
+
 ---
 
 ## Curated Skills — 36 Worth Keeping
@@ -87,6 +94,22 @@ done
 | `/technical-seo-audit` | Crawl-level site audit |
 | `/aeo-geo-optimizer` | AI search / answer engine optimization |
 | `/topic-brief` | Research-backed content briefs |
+
+### GEO (AI Search Optimization) — from geo-seo-claude
+
+| Skill | What it does |
+|-------|-------------|
+| `/geo-audit` | Full GEO site audit — AI search readiness score |
+| `/geo-brand-mentions` | Track + grow brand mentions in AI answers |
+| `/geo-citability` | Make content more likely to be cited by AI |
+| `/geo-compare` | GEO score vs competitors |
+| `/geo-content` | Write content optimized for AI search |
+| `/geo-crawlers` | Configure site for AI crawler access |
+| `/geo-llmstxt` | Generate `llms.txt` for AI discoverability |
+| `/geo-platform-optimizer` | Optimize for ChatGPT / Perplexity / Gemini specifically |
+| `/geo-schema` | Schema markup for AI search |
+| `/geo-technical` | Technical GEO implementation |
+| `/geo-report` | GEO performance report |
 
 ### Brand & Copy
 
@@ -170,6 +193,7 @@ RESEARCH   /market-research /last30days /icp-research /competitors /pricing-stra
 ADS        /ads-meta /ads-google /ads-tiktok /ads-landing /ads-creative /ads-math /ads-budget /wasted-spend-finder
 FRONT-END  /frontend-design /landing-page-optimizer /cro-auditor /schema-markup-generator /html-report-builder
 SEO        /seo-content-writer /programmatic-seo /technical-seo-audit /aeo-geo-optimizer /topic-brief
+GEO        /geo-audit /geo-brand-mentions /geo-citability /geo-compare /geo-content /geo-crawlers /geo-llmstxt /geo-platform-optimizer /geo-schema /geo-technical /geo-report
 BRAND      /brand-dna /copywriting-frameworks /competitor-ads-analyst /cold-email-outreach
 ANALYTICS  /ads-attribution /ads-server-side-tracking /google-analytics /google-tag-manager
 ENGINEERING /repo-scaffold /prd-generator /dep-audit /safe-push
