@@ -1,0 +1,8 @@
+.vercel
+.DS_Store
+.claude/
+qa-*.png
+task.md
+implementation_plan.md
+walkthrough.md
+serve.js

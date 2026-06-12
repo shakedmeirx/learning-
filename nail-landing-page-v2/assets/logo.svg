@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40" fill="none">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C4A0" />
+      <stop offset="100%" stop-color="#C8956A" />
+    </linearGradient>
+  </defs>
+  <!-- Icon: Minimalist petal / nail-art curve -->
+  <g transform="translate(6, 4)">
+    <!-- Elegant outer curve -->
+    <path d="M16 4 C24 12, 24 24, 16 32 C8 24, 8 12, 16 4 Z" stroke="url(#gold-grad)" stroke-width="1.5" stroke-linecap="round" />
+    <!-- Delicate inner bud -->
+    <path d="M16 10 C20 16, 20 22, 16 26 C12 22, 12 16, 16 10 Z" fill="url(#gold-grad)" opacity="0.3" />
+    <!-- Fine accent lines -->
+    <path d="M16 2 L16 34" stroke="url(#gold-grad)" stroke-width="1" stroke-dasharray="2 2" />
+    <circle cx="16" cy="18" r="1.5" fill="#E8C4A0" />
+  </g>
+  
+  <!-- Text: Bloom (styled serif font-like rendering) -->
+  <text x="46" y="27" font-family="Frank Ruhl Libre, Georgia, serif" font-size="22" font-weight="900" fill="currentColor" letter-spacing="-0.02em">Bloom</text>
+  
+  <!-- Small dot in rose gold -->
+  <circle cx="112" cy="25" r="2.5" fill="url(#gold-grad)" />
+</svg>
